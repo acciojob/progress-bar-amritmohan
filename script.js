@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentStep = 1;
 
     function updateProgress() {
-        // Update circles
+        // Ensure proper UI updates
         circles.forEach((circle, index) => {
             if (index < currentStep) {
                 circle.classList.add("active");
@@ -23,11 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Update progress line width
-        const progressPercentage = ((currentStep - 1) / (circles.length - 1)) * 100;
-        progressLine.style.width = `${progressPercentage}%`;
+        // Adjust progress line
+        progressLine.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
 
-        // Update button states
+        // Enable/Disable buttons
         prevBtn.disabled = currentStep === 1;
         nextBtn.disabled = currentStep === circles.length;
     }
@@ -46,6 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Initialize the UI
+    // Initialize UI state
     updateProgress();
 });
