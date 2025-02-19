@@ -14,19 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentStep = 1;
 
     function updateProgress() {
-        // Ensure proper UI updates
+        // Activate/deactivate circles
         circles.forEach((circle, index) => {
-            if (index < currentStep) {
-                circle.classList.add("active");
-            } else {
-                circle.classList.remove("active");
-            }
+            circle.classList.toggle("active", index < currentStep);
         });
 
         // Adjust progress line
         progressLine.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
 
-        // Enable/Disable buttons
+        // Enable or disable buttons
         prevBtn.disabled = currentStep === 1;
         nextBtn.disabled = currentStep === circles.length;
     }
