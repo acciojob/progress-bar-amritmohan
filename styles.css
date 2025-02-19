@@ -1,1 +1,61 @@
 /*  your css code here. If applicable */
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 350px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background-color: #ccc;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.circle.active {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: white;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
